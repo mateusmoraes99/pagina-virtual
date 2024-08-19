@@ -71,6 +71,9 @@ Ao executar o programa, a saída esperada seria algo como:
 Este programa demonstra como trabalhar com a memória virtual no C, uma habilidade útil em sistemas operacionais, desenvolvimento de software de baixo nível, e em casos onde o gerenciamento de memória eficiente é crucial.
 
 
+repositorio no replit para ver melhor codigo pag_virt_with_mmap.c ###https://replit.com/@mateusmoraes4/c
+
+
 
 
 
