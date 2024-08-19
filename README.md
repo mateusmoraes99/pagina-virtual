@@ -1,7 +1,7 @@
 # pagina-virtual
 O código que aloca uma página de memória virtual utilizando mmap, escreve um texto nessa memória, e depois exibe o conteúdo armazenado. Vou destacar os pontos importantes e explicar como ele funciona:
 
-# Explicação do Código
+## Explicação do Código
 
  Tamanho da Página de Memória:
     
@@ -9,7 +9,7 @@ O código que aloca uma página de memória virtual utilizando mmap, escreve um 
     
 O código obtém o tamanho de uma página de memória do sistema usando sysconf(_SC_PAGESIZE). Esse valor é geralmente 4096 bytes (4 KB) em muitos sistemas, mas pode variar.
 
-# Alocação de Memória Virtual:
+## Alocação de Memória Virtual:
 
 char *memory = mmap(NULL, total_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 
@@ -17,7 +17,7 @@ O mmap é usado para alocar total_size bytes de memória virtual. As flags PROT_
 
 O retorno de mmap é um ponteiro para a área de memória alocada.
 
-# Verificação do Sucesso da Alocação:
+## Verificação do Sucesso da Alocação:
 
 if (memory == MAP_FAILED) {
     perror("mmap falhou");
@@ -27,18 +27,18 @@ if (memory == MAP_FAILED) {
 Se mmap falhar, MAP_FAILED é retornado, e o código imprime uma mensagem de erro e termina.
 
 
-# Escrita de Dados na Memória:
+## Escrita de Dados na Memória:
 
 const char *text = "Este é um teste de escrita em memória virtual.";
 strncpy(memory, text, total_size);
 
 O código copia o texto text para a memória alocada utilizando strncpy. A função strncpy assegura que o texto não exceda o tamanho da memória alocada.
 
-# Exibição do Conteúdo da Memória:
+## Exibição do Conteúdo da Memória:
 
 printf("Dados escritos na memória: %s\n", memory);
 
-# Liberação da Memória Alocada:
+## Liberação da Memória Alocada:
 
 if (munmap(memory, total_size) == -1) {
     perror("munmap falhou");
@@ -48,7 +48,7 @@ if (munmap(memory, total_size) == -1) {
 A memória alocada é liberada usando munmap, evitando vazamentos de memória.
 
 
-### Como Compilar e Executar:
+# Como Compilar e Executar:
 
 Salve o Código:
         Salve o código em um arquivo chamado, por exemplo, memoria.c.
@@ -61,7 +61,7 @@ Execute o Programa:
        ./mmap_example
 
 
-# Saída Esperada
+## Saída Esperada
 
 Ao executar o programa, a saída esperada seria algo como: 
                Tamanho da página de memória: 4096 bytes
