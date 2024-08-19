@@ -72,6 +72,7 @@ Este programa demonstra como trabalhar com a memória virtual no C, uma habilida
 
 
 repositorio no replit para ver melhor codigo pag_virt_with_mmap.c ###https://replit.com/@mateusmoraes4/c
+para o funcionamento correto do pag_virt_with_mmap.c o arquivo kjv.txt tem esta no mesmo diretorio.
 
 
 
