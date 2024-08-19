@@ -58,7 +58,7 @@ Compile o Código:
         gcc -std=c99 -o memoria memoria.c
 
 Execute o Programa:
-       ./mmap_example
+       ./memoria
 
 
 ## Saída Esperada
